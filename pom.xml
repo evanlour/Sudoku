@@ -13,17 +13,24 @@
             <!-- Makes a runnable JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <archive>
-                        <manifest>
-                            <mainClass>Sudoku</mainClass> <!-- change this if using packages -->
-                        </manifest>
-                    </archive>
+                    <release>8</release>
                 </configuration>
+            </plugin>
+
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                <archive>
+                <manifest>
+                    <mainClass>Sudoku</mainClass> <!-- Fully qualified if in a package -->
+                </manifest>
+                </archive>
+            </configuration>
             </plugin>
         </plugins>
     </build>
